@@ -230,7 +230,7 @@ app.get('/check-status/:recordId', async (req, res) => {
         return res.status(404).json({ error: "Record not found" });
     }
 
-    let transactionId = record.fields['merchantOrderId'];
+    let transactionId = record.fields['Unique ID'];
     if (!transactionId) {
         logMessage(`⚠️ No merchantOrderId found for record ${recordId}.`);
         return res.status(400).json({ error: "Missing transaction ID" });
