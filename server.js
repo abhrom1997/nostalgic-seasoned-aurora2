@@ -174,7 +174,7 @@ async function processBatch(recordsBatch) {
 
             await base(TABLE_NAME).update(record.id, {
                 "Registration Payment Status": paymentStatus,
-                "Raw Payment Status Response": JSON.stringify(status),
+                "Registration Raw Payment Status Response": JSON.stringify(status),
                 "Payment Response Code": status.code,
                 "Status Message": status.message,
                 "X-Verify Status Check": rawResponse.xVerify, // ✅ Now properly stored
