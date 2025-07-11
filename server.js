@@ -173,7 +173,7 @@ async function processBatch(recordsBatch) {
             logMessage(`✅ Updating record ${record.id} with payment status: ${paymentStatus}`);
 
             await base(TABLE_NAME).update(record.id, {
-                "Payment Status": paymentStatus,
+                "Registration Payment Status": paymentStatus,
                 "Raw Payment Status Response": JSON.stringify(status),
                 "Payment Response Code": status.code,
                 "Status Message": status.message,
