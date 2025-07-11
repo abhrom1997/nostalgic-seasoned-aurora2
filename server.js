@@ -253,13 +253,13 @@ app.get('/check-status/:recordId', async (req, res) => {
     // ✅ Update Airtable with the fetched status
     try {
         await base(TABLE_NAME).update(recordId, {
-            "Payment Status": paymentStatus,
-            "Raw Payment Status Response": JSON.stringify(status),
-            "Payment Response Code": status.code,
-            "Status Message": status.message,
-            "X-Verify Status Check": rawResponse.xVerify, // ✅ Now properly stored
-            "Request URL": rawResponse.url // ✅ Now properly stored
-        });
+                "Registration Payment Status": paymentStatus,
+                "Registration Raw Payment Status Response": JSON.stringify(status),
+                "Payment Response Code": status.code,
+                "Status Message": status.message,
+                "X-Verify Status Check": rawResponse.xVerify, // ✅ Now properly stored
+                "Request URL": rawResponse.url // ✅ Now properly stored
+            });
         logMessage(`✅ Updated Airtable record ${recordId} with payment status: ${paymentStatus}`);
     } catch (error) {
         logMessage(`❌ Error updating Airtable record ${recordId}: ${error.message}`);
